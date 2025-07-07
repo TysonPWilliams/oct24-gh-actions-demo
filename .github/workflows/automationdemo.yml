@@ -1,0 +1,30 @@
+name: Automation Demo
+
+# When we push to our default branch
+#  run this workflow
+on:
+    push:
+        branches:
+            - main
+
+# Define the things to do within the workflow
+jobs:
+    # Run a job on linux
+    ourfirstjob:
+        runs-on: ubuntu-latest
+        # Steps are the specific things to do!
+        steps: 
+            - run: echo "Hello, world!"
+            - run: |
+                ls .
+                echo "All files of pwd listed above, enjoy"
+    
+    # Run a job on windows
+    oursecondjob:
+        runs-on: windows-latest
+        # Steps are the specific things to do!
+        steps: 
+            - run: echo "Hello, world!"
+            - run: |
+                ls .
+                echo "All files of pwd listed above, enjoy"
