@@ -12,9 +12,13 @@ jobs:
     # Run a job on linux
     ourfirstjob:
         runs-on: ubuntu-latest
+
         # Steps are the specific things to do!
         steps: 
             - run: echo "Hello, world!"
+
+            - uses: actions/checkout@v4
+
             - run: |
                 ls .
                 echo "All files of pwd listed above, enjoy"
@@ -22,9 +26,14 @@ jobs:
     # Run a job on windows
     oursecondjob:
         runs-on: windows-latest
+
         # Steps are the specific things to do!
         steps: 
             - run: echo "Hello, world!"
+
+            - name: Get a copy of the repo files
+                uses: actions/checkout@v4
+
             - run: |
                 ls .
                 echo "All files of pwd listed above, enjoy"
